@@ -29,6 +29,25 @@
 # Пользователь ввел число 8. Результат: 8, 7, 5, 3, 3, 2.
 # Пользователь ввел число 1. Результат: 7, 5, 3, 3, 2, 1.
 # Набор натуральных чисел можно задать непосредственно в коде, например, my_list = [7, 5, 3, 3, 2].
+my_list = [7, 5, 3, 3, 2]
+while True:
+    number = int(input('Введите число: '))
+    for index, item in enumerate(my_list):
+        if number == item:
+            #     #узнаем сколько существует рейтингом с таким же значением
+            same_rate = my_list.count(number)
+            insert_index = index + same_rate
+            my_list.insert(insert_index, float(number))
+            break
+        elif item < number:
+            my_list.insert(index, float(number))
+            break
+        else:
+            break
+    print(my_list)
+
+#
+
 
 
 # 6. *Реализовать структуру данных «Товары».
